@@ -1,0 +1,6 @@
+[submodule "rails-mini-projects"]
+	path = rails-mini-projects
+	url = git@github.com:DarrenLo0530/rails-mini-projects.git
+[submodule "google-homepage"]
+	path = google-homepage
+	url = git@github.com:DarrenLo0530/google-homepage.git
