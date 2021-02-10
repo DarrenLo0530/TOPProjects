@@ -1,0 +1,4 @@
+<%= render partial: "kitten", locals: {kitten: @kitten}%>
+<%= link_to "Edit Kitten", edit_kitten_path %>
+<%= link_to "Delete Kitten", kitten_path, method: :delete, data: {confirm: "Are you sure you want to delete this?"} %>
+<%= link_to "Home", root_path %>

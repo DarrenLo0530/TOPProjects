@@ -1,0 +1,14 @@
+<h1 class="title">View Photos</h1>
+<%= form_with url: 'static_pages', method: :get, local: true, class: "search-bar" do |f| %>
+    <%= text_field_tag :user_id, nil, required: true, placeholder: 'Enter Flickr User ID' %>
+    <%= submit_tag "View Photos" %>
+<% end%>
+<% if @photo_links %>
+    <ul class="grid">
+    <% @photo_links.each do |link| %>
+            <li><%= image_tag link%></li>
+        <% end %>
+    </ul>
+<% else %>
+    <p>No photos</p>
+<% end %>

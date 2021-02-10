@@ -1,0 +1,39 @@
+<div class="section">
+    <div class="container">
+        <div class="box content">
+            <h2 class="title">Flight Details</h2>
+                <div class="level">
+                    <div class="level-item has-text-centered">
+                        <p class="heading is-size-3"><%= @booking.flight.origin.code %></p>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <span class="icon has-text-info"><i class="fas fa-plane fa-3x"></i></span>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <p class="heading is-size-3"><%= @booking.flight.destination.code %></p>
+                    </div>
+                </div>
+                <div class="level">
+                    <div class="level-left level-item">
+                        <h4 class="heading mb-0 mr-3">Take Off:</h4>
+                        <p class="is-size-5"><%= @booking.flight.take_off_formatted %></p>
+                    </div>
+                </div>
+                <div class="level">
+                    <div class="level-left level-item">
+                        <h4 class="heading mb-0 mr-3">Flight Duration:</h4>
+                        <p class="is-size-5"><%= @booking.flight.flight_duration_formatted %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="content">
+            <h2 class="title"><%= "Passengers(#{@booking.passengers.size})"%></h2>
+            <%= render partial: "passenger", collection: @booking.passengers, as: :passenger %>
+        </div>
+    </div>
+</div>

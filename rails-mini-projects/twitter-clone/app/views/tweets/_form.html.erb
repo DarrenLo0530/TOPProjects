@@ -1,0 +1,13 @@
+<%= simple_form_for(@tweet) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-group">
+        <%= f.input :body, label: "Tweet about it", 
+                           input_html: {class: "form-control"}, 
+                           label_html: {class: "font-weight-bold"}, 
+                           wrapper: false, 
+                           placeholder: "Compose a new tweet...",
+                           autofocus: true %>
+    </div>
+    <%= f.button :submit, class: "btn btn-primary"%>
+
+<% end %>

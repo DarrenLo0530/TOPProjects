@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+        <link rel = 'stylesheet' href = 'styles.css'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=B612">
+    </head>
+    <body>
+        <h1>Rock Paper Scissors</h1>
+        <div id = 'button-container'>
+            <button id = 'rock' class = 'game-button' data-key = '1'>Rock</button>
+            <button id = "paper" class = 'game-button' data-key = '3'>Paper</button>
+            <button id = 'scissors' class = 'game-button' data-key = '2'>Scissors</button>
+        </div>  
+
+        <div id = 'score'>
+            <div id = 'player-wins' class = 'column'>
+                <span>Player win(s)</span>
+                <span class = 'score-number'>0</span>
+            </div>
+            <div  id = 'computer-wins' class = 'column' >
+                <span>Computer win(s)</span>
+                <span class = 'score-number'>0</span>
+            </div>
+        </div>
+
+
+
+        <div id = "results">
+            <h2>Results</h2>
+            <div id = 'result-text-container' class = 'column'>
+            </div>
+        </div>
+        <script src = 'scripts.js'></script>
+    </body>
+</html>

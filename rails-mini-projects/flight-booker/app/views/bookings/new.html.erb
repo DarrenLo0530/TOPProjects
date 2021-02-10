@@ -1,0 +1,70 @@
+<section class="section has-background-grey-lighter">
+    <div class="container">
+        <div class="content">
+                <div class="level is-mobile">
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <h2 class="heading">Flight ID</h2>
+                            <p class="is-size-5"><%= @flight.id %></p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <h2 class="heading">Origin</h2>
+                            <p class="is-size-5"><%= @flight.origin.code %></p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <h2 class="heading">Destination</h2>
+                            <p class="is-size-5"><%= @flight.destination.code %></p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <h2 class="heading">Take Off</h2>
+                            <p class="is-size-5"><%= @flight.take_off_formatted %></p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <h2 class="heading">Flight Duration</h2>
+                            <p class="is-size-5"><%= @flight.flight_duration_formatted %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    </div>
+<section class="section">
+    <div class="container">
+        <%= form_with model: @booking, local: true do |booking_form| %>
+            <%= booking_form.hidden_field :flight_id, value: @flight.id %>
+            <%= booking_form.fields_for :passengers do |passenger_form| %>
+                <div class="box has-background-light">
+                    <h2 class="title"><%= "Passenger #{passenger_form.index + 1}" %></h2>
+                    <div class="field">
+                        <%= passenger_form.label :first_name, "First Name", class: "label" %>
+                        <div class="control" >
+                            <%= passenger_form.text_field :first_name, required: true, class: "input" %>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <%= passenger_form.label :last_name, "Last Name", class: "label" %>
+                        <div class="control" >
+                            <%= passenger_form.text_field :last_name, required: true, class: "input" %>                
+                        </div>
+                    </div>
+                    <div class="field">
+                        <%= passenger_form.label :email, "Email", required: true, class: "label" %>
+                        <div class="control" >
+                            <%= passenger_form.text_field :email, required: true, class: "input" %>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+            <%= submit_tag "Book", class: "button is-info is-medium"%>
+        <% end %>
+    </div>
+</section>

@@ -1,0 +1,11 @@
+<%= form_with model: @kitten do |f| %>
+    <%= f.label :name, "Name:" %>
+    <%= f.text_field :name, required: true %>
+    <%= f.label :age, "Age:" %>
+    <%= f.select :age, @age_options, required: true %>
+    <%= f.label :cuteness, "Cuteness" %>
+    <%= f.select :cuteness, @rating_options, required: true %>
+    <%= f.label :softness, "Softness" %>
+    <%= f.select :softness, @rating_options,required: true %>
+    <%= f.submit "Submit" %>
+<% end %>

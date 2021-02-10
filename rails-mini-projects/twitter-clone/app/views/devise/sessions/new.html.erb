@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row justify-content-center mb-4">
+        <div class="col-6">
+            <h2 class="font-weight-bold">Log In</h2>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        
+        <div class="col-6">
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <%= f.error_notification %>
+
+                <div class="form-inputs">
+                    <div class="form-group">
+                        <%= f.input :email,
+                                    required: true,
+                                    wrapper: false,
+                                    input_html: { class: "form-control", autocomplete: "email" }%>
+                    </div>
+                    <div class="form-group">
+                        <%= f.input :password,
+                                required: true,
+                                wrapper: false,
+                                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                                hint_html: {class: "text-muted"},
+                                input_html: { class: "form-control", autocomplete: "new-password" } %>
+                    </div>
+                    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+                </div>
+
+                <%= f.button :submit, "Login", class: "btn btn-primary" %>
+            <% end %>
+            <br />
+            <%= render "devise/shared/links" %> 
+            
+        </div>
+
+    
+    </div>
+</div>
+

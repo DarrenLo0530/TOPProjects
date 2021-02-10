@@ -1,0 +1,136 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body{
+    background-color: #F6F6EB;
+    min-width: 700px;
+    height: 100vh;
+    font-family: B612;
+    margin: 0px;
+
+}
+
+p{
+    font-size: 30px;
+    margin: 10px;
+}
+
+h1{
+    position: relative;
+    text-align: center;
+    font-size: 60px;
+    text-decoration: underline;
+    margin: 80px
+}
+h2{
+    margin-bottom: 10px;
+    text-decoration: underline;
+    font-size: 40px;
+}
+div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span{
+    font-size: 40px;
+    margin: 30px;
+    padding: 30px;
+    text-align: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+button {
+    font-family: B612;
+    transition-duration: 0.4s;
+    border: transparent solid 3px;
+    outline: none;
+    transition: border 0.5s;
+}
+
+button:hover{
+    border: rgb(163, 163, 163) solid 3px;
+}
+
+button:active{
+    border: rgb(50, 51, 54) solid 3px;
+    transition: 0s;
+}
+
+.game-button{
+    min-width: 20%;
+    padding: 30px;
+    margin:20px;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: center;
+    font-size: 20px;
+}
+
+#button-container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#score {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#player-wins{
+    background-color: #89E894; 
+    border: rgb(83, 146, 91) solid 5px;
+}
+
+#computer-wins{
+    background-color: #FF6961;
+    border: rgb(184, 76, 70) solid 5px;
+}
+
+#player-wins, #computer-wins{
+    border-radius: 10px;
+    width: 30%;
+    margin: 10px;
+}
+
+#rock {
+    background-color: #C7CEEA;
+}
+
+#paper {
+    background-color: rgb(189, 207, 158);   
+
+}
+
+#scissors {
+    background-color: #FF9AA2;
+}
+
+#results {
+    border: 6px solid rgb(117, 117, 138);
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 30px;
+    margin: 10px 10px 50px 10px;
+
+}
+
+#restart-button {
+    font-size: 30px;
+    background-color: #ACE7FF;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}

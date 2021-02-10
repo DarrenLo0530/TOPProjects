@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header media">
+                    <figure class="img-thumbnail">
+                        <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
+                    </figure>
+                    <div class="media-body align-self-center">
+                        <h5 class="font-weight-bold"><%= current_user.name %></h5>
+                        <small class="text-muted"><%= "@#{current_user.username}" %></small>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <%= @tweet.body %>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+

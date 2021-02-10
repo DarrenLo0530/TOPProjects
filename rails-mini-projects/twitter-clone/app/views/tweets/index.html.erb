@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <% if user_signed_in? %> 
+            <%= render partial: 'profile' %>
+        <% else %>
+            <%= render partial: 'trends'%>
+        <% end %>
+        <%= render partial: 'feed' %>
+        <%= render partial: 'who-to-follow'%>
+    </div>
+</div>

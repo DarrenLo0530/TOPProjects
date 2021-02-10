@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TwitterClone</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"%>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if flash.notice %>
+        <div class="alert alert-primary" role="alert">
+            <p><%= notice %></p>
+        </div>
+    <% end %>
+    <% if flash.alert %>
+        <div class="alert alert-danger" role="alert">
+            <p><%= alert %></p>
+        </div>
+    <% end %>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <%= link_to "TwitterClone", root_path, class: "navbar-brand"%>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="navbarNav" class="collapse navbar-collapse">
+        
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <% if user_signed_in? %>
+                        <%= link_to "New Tweet", root_path, class: "btn bg-white text-primary"%>
+                    <% else %>
+                        <%= link_to "New Tweet", new_user_registration_path, class: "btn bg-white text-primary"%>
+                    <% end %>
+                </li>
+                <% if user_signed_in? %>
+                    <li class="nav-item">
+                        <%= link_to current_user.name, edit_user_registration_path(current_user), class: "btn"%>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn"%>
+                    </li>
+                <% else %>
+                    <li class="nav-item">  
+                        <%= link_to "Sign in", new_user_session_path, class: "btn"%>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Sign up", new_user_registration_path, class: "btn"%>    
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <%= yield %>
+  </body>
+</html>

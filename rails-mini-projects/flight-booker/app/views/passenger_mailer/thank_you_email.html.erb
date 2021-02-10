@@ -1,0 +1,10 @@
+<h1><%= "#{@passenger.first_name} #{@passenger.last_name}, thank you for booking with Flite" %></h1>
+
+<p>We are honoured that you have booked your flight with Flite!</p>
+<p>We hope that you book with us again!</p>
+
+<h2>Flight Details</h2>
+<p><%="Origin Airport: #{@booking.flight.origin.code}"%></p>
+<p><%="Destination Airport: #{@booking.flight.destination.code}"%></p>
+<p><%="Take Off Time: #{@booking.flight.take_off_formatted}"%></p>
+<p><%="Flight Duration: #{@booking.flight.flight_duration_formatted}"%></p>

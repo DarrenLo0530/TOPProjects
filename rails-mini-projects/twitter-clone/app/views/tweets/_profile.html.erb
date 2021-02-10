@@ -1,0 +1,38 @@
+<div class="col-3">
+    <div class="card">
+        <div class="card-header card-header-text">Profile</div>
+        <div class="card-body">
+            <div class="media">
+                <figure class="img-thumbnail">
+                    <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
+                </figure>
+                <div class="media-body">
+                    <h5 class="font-weight-bold"><%= current_user.name %></h5>
+                    <small><%= "@#{current_user.username}" %></small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card-body container border-top p-3">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <p class="stats-heading">Tweets</p>
+                    <span class="text-primary"><%= current_user.tweets.count %></span>
+
+                </div>
+                <div class="col-auto">
+                    <p class="stats-heading">Following</p>
+                    <span class="text-primary">69</span>
+
+                </div>
+                <div class="col-auto">
+                    <p class="stats-heading">Followers</p>
+                    <span class="text-primary">101</span>
+
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+</div>

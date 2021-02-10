@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FlightBooker</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body class="has-background-white">
+    <nav class="navbar is-light" role="navigation" aria-label="navigation bar">
+        <div class="navbar-brand">
+            <%= link_to "Flite", root_path, class: "navbar-item is-size-4"%>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMain">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navbarMain">
+            <ul class="navbar-start">
+                <li class="navbar-list-item"><%= link_to "Home", root_path, class: "navbar-item"%></li>
+            </ul>
+        </div>
+    </nav>
+    <% if flash[:notice] %>
+        <div class="notification is-info"><%= notice %></div>
+    <% end %>
+        <% if flash[:success] %>
+        <div class="notification is-success"><%= notice %></div>
+    <% end %>
+    <% if flash[:error] %>
+        <div class="notification is-danger"><%= error %></div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
