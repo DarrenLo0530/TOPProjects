@@ -1,0 +1,1 @@
+This is a hangman game that includes serializiation for the Odin Project
