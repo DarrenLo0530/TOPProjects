@@ -1,15 +1,45 @@
 class Book {
+    #title = "Test";
+    #author;
+    #numPages;
+    #read;
+    
     constructor(title, author, numPages, read) {
-        this.title = title;
-        this.author = author;
-        this.numPages = numPages;
-        this.read = read;
+        this.#title = title;
+        this.#author = author;
+        this.#numPages = numPages;
+        this.#read = read;
     }
 
     info() {
-        return `${this.$title} by ${this.$author}, ${this.$numPages}, ${this.$read ? "already $read" : "not $read yet"}.`;
+        return `${this.#title} by ${this.#author}, ${this.#numPages}, ${this.#read ? "already read" : "not read yet"}.`;
+    }
+
+    get title() {
+        return this.#title;
+    }
+
+    get author() {
+        return this.#author;
+    }
+
+    get numPages() {
+        return this.#numPages;
+    }
+
+    get read() {
+        return this.#read;
+    }
+
+    toJSON() {
+        return {title: this.#title, author: this.#author, numPages: this.#numPages, read: this.#read};
+    }
+
+    static revive(data) {
+        return new Book(data.title, data.author, data.numPages, data.read);
     }
 }
+
 
 let library = [];
 
@@ -21,8 +51,10 @@ function saveToStorage() {
 function populateFromStorage() {
     libraryData = localStorage.getItem('library');
     if(libraryData) {
-        library = JSON.parse(libraryData);
+        library = JSON.parse(libraryData)
+                      .map(data => Book.revive(data));
     }
+
 }
 
 function validateBook(book) {
@@ -51,7 +83,9 @@ const $newBookModal = document.querySelector('#new-book-modal');
 const $newBookModalClose = document.querySelector('#new-book-modal .close');
 
 function addBookToLibrary() {    
+    console.log($title.value);
     let book = new Book($title.value, $author.value, parseInt($numPages.value), $read.checked);
+    console.log(book);
     if(!validateBook(book)) {
         return false;
     }
