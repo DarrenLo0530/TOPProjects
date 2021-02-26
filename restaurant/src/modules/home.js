@@ -4,11 +4,13 @@ const loadPage = function() {
     const $contentContainer = getContentContainer();
     $contentContainer.innerHTML = "";
 
-    $contentContainer.appendChild(createNavBar());
-    $contentContainer.appendChild(createMainTopic("CookieSite", "The number 1 cookie store", "images/cookies.jpg"));
-
     //Create the home page content
+    $contentContainer.appendChild(createNavBar('#home'));
+
+    $contentContainer.appendChild(createMainTopic("CookieSite", "The number 1 cookie store", "images/cookies.jpg"));
+    
     const $contentBody = document.createElement('div');
+
     $contentBody.className = "content-body";
     $contentBody.textContent = 
         `We are the number 1 cookie sellers in the world.Lorem ipsum dolor sit amet,

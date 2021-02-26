@@ -18,7 +18,9 @@ const menu = [
 const loadPage = function() {
     const $contentContainer = getContentContainer();
     $contentContainer.innerHTML = "";
-    $contentContainer.appendChild(createNavBar());
+    
+    $contentContainer.appendChild(createNavBar('#shop'));
+
     $contentContainer.appendChild(createMainTopic("Shop", "Buy our cookies", "images/store.jpg"));
 
 
@@ -28,7 +30,8 @@ const loadPage = function() {
 
     menu.forEach(cookie => $shopDisplay.appendChild(createCookiePanel(cookie)));
 
-    $contentContainer.appendChild($shopDisplay)
+    $contentContainer.appendChild($shopDisplay);
+
 }
 
 function createCookiePanel(cookie) {

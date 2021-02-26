@@ -4,7 +4,8 @@ const loadPage = function() {
     const $contentContainer = getContentContainer();
     $contentContainer.innerHTML = "";
 
-    $contentContainer.appendChild(createNavBar());
+
+    $contentContainer.appendChild(createNavBar('#contact'));
     $contentContainer.appendChild(createMainTopic("Contact Us", "Get in contact with our staff", "images/contact.jpg"));
 
     const $contentBody = document.createElement('div');

@@ -2,7 +2,7 @@ import loadHomePage from "./home";
 import loadShopPage from "./shop";
 import loadContactPage from "./contact";
 
-const createMainTopic = function(headingText, subheadingText, imagePath) {
+function createMainTopic(headingText, subheadingText, imagePath) {
     //The container with heading and subheading
     const $container = document.createElement('div');
     $container.className = "main-topic-container";
@@ -23,11 +23,11 @@ const createMainTopic = function(headingText, subheadingText, imagePath) {
     return $container;
 }
 
-const getContentContainer = function() {
+function getContentContainer() {
     return document.querySelector("#content");
 }
 
-const createNavBar = function() {
+function createNavBar(tabId) {
     const $navContainer = document.createElement('nav').appendChild(document.createElement('ul'));
     $navContainer.appendChild(createNavLink("CookieSite", "#", "home", loadHomePage));
 
@@ -38,6 +38,8 @@ const createNavBar = function() {
     $rightNav.appendChild(createNavLink("Contact Us", "#", "contact", loadContactPage));
 
     $navContainer.appendChild($rightNav);
+
+    highlightNavLink($navContainer, tabId);
 
     return $navContainer.parentElement;
 }
@@ -54,6 +56,11 @@ const createNavLink = function(text, linkUrl, id, onclick) {
     $linkContainer.appendChild($link);
 
     return $linkContainer;
+}
+
+function highlightNavLink(nav, id) {
+    const $link = nav.querySelector(id);
+    $link.classList.add('selected-tab');
 }
 
 export { createMainTopic, getContentContainer, createNavBar }
