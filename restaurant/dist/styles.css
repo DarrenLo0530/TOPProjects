@@ -1,0 +1,181 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+body {
+	font-family: "Arial";
+    background-color: rgb(233, 221, 206);
+}
+
+
+nav {
+	font-size: 1.5rem;
+	background-color: #f0e8e6;
+    padding: 20px 20vw;
+	flex-direction: row;
+}
+
+nav ul {
+	display: flex;
+}
+
+nav li {
+	list-style: none;
+}
+
+nav li:not(:last-child) {
+	margin-right: 50px;
+}
+
+nav a {
+	color: rgba(0, 0, 0, 0.95);
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: rgba(114, 114, 114, 0.7);
+}
+
+.main-topic-container h1 {
+    text-align: center;  
+	margin-bottom: 30px; 
+}
+
+.main-topic-container p {
+	text-align: center;
+	font-size: 30px;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.main-topic-container {
+    padding: 30px;
+	display: flex;
+	height: 40vh;
+	align-items: center;
+	justify-content: center;
+	color: rgba(255, 255, 255, 95);
+	font-size: 100px; 
+	flex-direction: column;
+}
+
+.right-nav {
+	margin-left: auto;
+	display: inline-flex;
+}
+
+.content-body {
+	font-size: 25px;
+	margin: 100px 20vw;
+	padding: 10px;
+	line-height: 40px;
+	color:rgba(0, 0, 0, 0.9);
+}
+
+
+.info-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 50px;
+}
+
+.info-label {
+	font-size: 40px;
+	margin-bottom: 5px;
+}
+
+.info {
+	color:rgba(0, 0, 0, 0.8);
+}
+
+#shop-display {
+	margin: 100px 20vw;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+}
+
+.cookie-image-container {
+	position: relative;
+	padding-bottom: 100%;
+	overflow: hidden;
+}
+
+.cookie-image-container img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 10px 10px 0 0
+}
+
+.cookie-info {
+    background-color:  rgb(248, 241, 231);
+	padding: 0.7rem;
+}
+
+.cookie-name {
+	font-size: 1.5rem;
+	margin-bottom: 0.2rem;
+}
+
+.cookie-description {
+	font-size: 1.2rem;
+	color:rgba(0, 0, 0, 0.7);
+	margin-bottom: 0.5rem;
+}
+
+.cookie-price {
+	font-size: 1.2rem;
+	color:rgba(0, 0, 0, 0.7);
+}
