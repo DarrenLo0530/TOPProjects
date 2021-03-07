@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A todo list website for all your needs.">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="../node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">TooDoo</a>
+        </nav>
+    </header>
+    <main>
+        <div class="modal" id="project-modal">
+            <div class="modal-pane">
+                <h3>Create A Project</h3>
+                <hr>
+                <div class="input-group">
+                    <label for="project-name">Name</label>
+                    <input type="text" name="project-name" id="project-name" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="submit" class="bg-main" value="Create" id="create-project">
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="task-modal">
+            <div class="modal-pane">
+                <h3>Add a Task</h3>
+                <hr>
+
+                <div class="input-group">
+                    <label for="task-name">Name</label>
+                    <input type="text" name="task-desc" id="task-desc" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="task-desc">Description</label>
+                    <textarea type="text" name="task-name" id="task-name" required></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="task-priority">Priority</label>
+                    <input type="number" name="task-priority" id="task-priority" min="0" max ="100" required></input>
+                </div>
+
+                <div class="input-group">
+                    <label for="task-due">Due Date</label>
+                    <input type="datetime-local" name="task-due" id="task-due" required></input>
+                </div>
+                
+
+                <div class="input-group">
+                    <input type="submit" class="bg-main" value="Create" id="create-task">
+                </div>
+            </div>
+        </div>
+
+        <nav class="column" id="side-nav">
+            <button class="project-select" id="all-tasks">All</button>
+            <button class="project-select" id="today-tasks">Today</button>
+
+            <div id="projects">
+                <div class="side-nav-dropdown">
+                    <button class="side-nav-dropdown-label">Projects</button>
+                    <button class="project-create" data-toggle="project-modal"></button>
+                </div>
+                <div id="projects-list">
+                </div>
+            </div>
+        </nav>
+
+        <div class="column" id="tasks">
+            <header>
+                <h1 class="project-name">Project</h1>
+                <button id="create-task" data-toggle="task-modal">Create task</button>
+            </header>
+
+            <ul class="checklist">
+                <li class="checklist-item checked">
+                    <div class="checklist-item-main">
+                        <button class="task-complete"></button>
+                        <p class="item-name" data-editor="">TEst</p>
+                        <div>
+                            <span class="item-priority">P1</span>
+                            <span class="item-due">Feb 2nd 2020</span>
+                        </div>
+                    </div>
+                    <div class="item-details"> 
+                        <p class="item-desc">Test descirpion</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
