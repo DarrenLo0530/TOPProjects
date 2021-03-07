@@ -3,11 +3,11 @@ import { clamp } from './helper';
 
 class Task {
     constructor(name, description, dueDate, priority, projectName = null) {
-        this._name = name;
-        this._description = description;
-        this._dueDate = dueDate;
-        this._priority = priority;
-        this._projectName = projectName;
+        this.name = name;
+        this.description = description;
+        this.dueDate = dueDate;
+        this.priority = priority;
+        this.projectName = projectName;
     }
 
     get name() {
