@@ -138,7 +138,7 @@ function createTaskDisplay(task, index) {
             </div>
             <div class="item-details"> 
                 <p class="item-desc editable" id="item-desc-${index}">${task.description}</p>
-                <textarea class="editor item-desc" data-editor="item-desc-${index}" value="${task.description}">
+                <textarea class="editor item-desc" data-editor="item-desc-${index}">${task.description}</textarea>
             </div>
         </li>`;
         
