@@ -31,7 +31,6 @@ const loadPage = function() {
     menu.forEach(cookie => $shopDisplay.appendChild(createCookiePanel(cookie)));
 
     $contentContainer.appendChild($shopDisplay);
-
 }
 
 function createCookiePanel(cookie) {
