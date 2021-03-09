@@ -41,6 +41,7 @@ function initializeImageCarousels() {
             //Find the index of the image being displayed and set it as active (Ensures if none are active, it still displays)
             return Math.max(0, Array.from($imageSlides).findIndex($imageSlide => $imageSlide.classList.contains('active')));
         }
+
         
         //Attach listeners between the circles and each slide
         $imageSlides.forEach(($imageSlide, index) => {
@@ -52,18 +53,21 @@ function initializeImageCarousels() {
         });
 
         //Set up button to display next item
+        const numImages = $imageSlides.length;
         $imageCarousel.querySelector('.next-img').onclick = () => {
-            const numImages = $imageSlides.length;
             displaySlide((getActiveSlideIdx() + 1) % numImages);
         };
 
         //Set up button to display prev item
         $imageCarousel.querySelector('.prev-img').onclick = () => {
-            const numImages = $imageSlides.length;
             displaySlide((getActiveSlideIdx() - 1 + numImages) % numImages);
         };
 
         displaySlide(getActiveSlideIdx());
+
+        setInterval(() => {
+            displaySlide((getActiveSlideIdx() + 1) % numImages);
+        }, 2000);
     });
 }
 
