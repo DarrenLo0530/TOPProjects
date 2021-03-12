@@ -126,9 +126,6 @@ function createTaskDisplay(task, index) {
     $editor.addEventListener('focusout', () => {
       $editor.classList.remove('editing');
       $editable.classList.remove('editing');
-    });
-
-    $editor.addEventListener('change', () => {
       saveProjectsLocal();
       displaySelectedProject();
     });

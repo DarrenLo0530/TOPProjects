@@ -76,11 +76,12 @@ html {
 
 /* Actual CSS */
 body {
+	position: relative;
 	display: flex;
 	min-width: 650px;
 	height: 100%;
-    background-color: var(--page-background);
-    font-family: Arial, Helvetica, sans-serif;
+	background-color: var(--page-background);
+	font-family: Arial, Helvetica, sans-serif;
 	color: var(--font-color);
 	flex-direction: column;
 }
@@ -285,6 +286,7 @@ textarea {
 	margin-right: 2rem;
 	border: 1px solid var(--divider);
 	border-radius: 50%;
+	z-index: 3;
 }
 
 .task-complete:hover:after {
@@ -323,9 +325,11 @@ textarea {
 	left: 0;
 
 	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999;
 }
 
 .modal-pane {
+	position: relative;
 	margin: auto;
 	padding: 2rem;
 	width: 30%;
