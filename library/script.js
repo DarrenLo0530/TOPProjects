@@ -165,6 +165,7 @@ function clearForm() {
 }
 
 document.querySelector('.book-form').addEventListener('submit', e => {
+    // Submit usually refreshes page, e.preventDefault() stops this from occurring
     e.preventDefault();
 
     addBookToLibrary();
