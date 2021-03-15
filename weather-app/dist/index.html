@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Weather</title>
+</head>
+<body>
+    <div class="content">
+        <div class="left">
+            <div class="time-info">
+                <p class="time"></p>
+                <p class="date"></p>
+            </div>
+
+            <p class="location">
+            </p>
+        
+            <div class="temperature-info">
+                <p class="temperature"></p>                    
+                <p class="feels-like"></p>
+                <div class="weather-desc">Clear</div>
+            </div>
+
+            <div class="weather-info">
+                <div>
+                    <i class="fas fa-wind"></i>
+                    <span class="wind-speed"></span>
+                </div>
+                <div>
+                    <i class="fas fa-cloud"></i>
+                    <span class="cloudiness"></span>
+                </div>
+
+                <div>
+                    <i class="fas fa-tint"></i>
+                    <span class="humidity"><span>
+                </div>
+            </div>
+
+            <div id="daily-temperature-graph">                
+            </div>
+        </div>
+        <div class="right">
+            <nav class="top-nav">
+                <h1>Weekly Forecast</h1>
+                <form id="location-search">
+                    <input type="text" name="location" id="location-search-bar" placeholder="Search for a location" autocomplete="off">
+                    <input type="submit">
+                </form>
+            </nav>
+            <div class="weekly-data">
+            </div>
+        </div>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
