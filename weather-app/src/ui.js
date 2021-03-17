@@ -148,12 +148,10 @@ function setWeeklyForecast(data) {
   });
 }
 
-
 let currentLocation = 'Toronto';
 
 async function displayData(location) {
   const weatherData = await getSevenDayForecast(location);
-  console.log(weatherData);
   displayTodayData(weatherData);
   setWeeklyForecast(weatherData);
   currentLocation = location;

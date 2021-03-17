@@ -169,7 +169,7 @@ body {
 
 .weekly-data {
   margin-top: 5vh;
-  padding: 0rem 1rem 0rem 1rem;
+  padding: 1rem 1rem 0rem 1rem;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -265,6 +265,7 @@ body {
 .uv i {
   color: rgb(168, 64, 189);
 }
+
 
 .weekly-data > div:first-child .day-of-week {
   color: rgb(34, 120, 141);
