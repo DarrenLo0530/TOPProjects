@@ -1,0 +1,455 @@
+@font-face {
+  font-family: Imperial;
+  src: url('https://g1.nyt.com/fonts/family/imperial/imperial-normal-400.2531995fefd3b997f9c4d564ebe89268.woff2');
+}
+
+@font-face {
+  font-family: Cheltenham;
+  src: url('https://g1.nyt.com/fonts/family/cheltenham/cheltenham-normal-400.a3ed7afe3eaa0a873f3fbd379f8c491b.woff2 ');
+}
+
+@font-face {
+  font-family: Franklin;
+  src: url('https://g1.nyt.com/fonts/family/franklin/franklin-normal-500.d6c06a3d84a57100edad5bf9b84ff739.woff2');
+}
+
+
+.body > header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e2e2;
+  padding: 4px 15px 4px 15px;
+}
+
+header .logo-container {
+  position: absolute;
+  left: 0px;
+  justify-self: end;
+  margin-top: 6px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.logo {
+  width: 195px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.top-nav .left, .top-nav .right {
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.top-nav .right .btn {
+  font-weight: 700;
+  font-size: 0.8rem;
+  background-color: #567b95;
+  padding: 0.6rem 0.7rem;
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 2px;
+  margin: 0rem 0.1rem;
+}
+
+.top-nav .right .btn:hover {
+  background-color: #326891;
+}
+
+.top-nav .left button.btn {
+  margin-right: 0.9rem;
+  background-color: transparent;
+}
+
+.top-nav .left a.btn {
+  font-size: 14px;
+  color: black;
+  font-family: Franklin;
+  font-weight: bold;
+  letter-spacing: 0.7px;
+}
+
+.content {
+  padding: 0px 10vw;
+}
+
+
+.content {
+  margin-top: 60px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-content {
+  width: 600px;
+}
+
+.article-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-family: Cheltenham;
+  font-weight: 700;
+  font-style: oblique;
+}
+
+hr {
+  border:none;
+  height: 1px;
+  background-color: #e2e2e2;
+}
+
+.social-media {
+  display: inline-flex;
+  flex-wrap: wrap;
+  padding: 0.8rem 0rem 1.5rem;
+}
+
+.social-media a {
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #ececec;
+  color: black;
+}
+
+.social-media a:not([href="#bookmark"]):hover {
+  background-color: transparent;
+  border: 1px solid black;
+}
+
+.social-media a[href="#bookmark"] {
+  background-color: transparent;
+  font-size: 1.5rem;
+  margin-left: 0px;
+}
+
+.content img {
+  min-width: 0px;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.content figure {
+  margin-bottom: 3rem;
+}
+
+.content figcaption {
+  font-family: Imperial;
+  color: rgb(119, 119, 119);
+  margin-top: 0.5rem;
+}
+
+.content figcaption span {
+  line-height: 1.3rem;
+}
+
+.content figcaption .author {
+  font-size: 0.8rem;
+  color: rgb(160, 160, 160);
+}
+
+article.article {
+  margin: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-info .author .name {
+  text-decoration: underline;
+  text-decoration-color: rgb(197, 197, 197);
+  color: inherit;
+}
+
+.article-info .author {
+  margin-bottom: 1rem;
+}
+
+.article-info .author a {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.article-info .date {
+  font-family: Franklin;
+  font-size: 0.85rem;
+}
+
+.article-info {
+  margin-bottom: 3rem;
+}
+
+.article > .text-content > p, h2 {
+  font-family: Imperial;
+  font-weight: normal;
+  margin-bottom: 0.95rem;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  color: #333;
+}
+
+.sign-up-banner {
+  font-weight: normal;
+  font-family: Imperial;
+  margin-bottom: 0.8rem;
+  line-height: 1.5rem;
+}
+
+.italicized {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.sign-up-text .italicized {
+  font-size: 1.1rem;
+}
+
+.sign-up-banner button {
+  float: right;
+  padding: 0.3rem 0.8rem;  
+  font-family: Franklin;
+  background-color: transparent;
+  font-weight: bold;
+  border: 1px solid black;
+  margin-left: 1rem;
+  border-radius: 3px;
+  margin-top: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.sign-up-banner button:hover {
+  background-color: rgb(26, 26, 26);
+  color: white;
+}
+
+
+.thank-you-message hr {
+  width: 60px;
+}
+
+.thank-you-message p, a { 
+  display: flex;
+  justify-content: center;
+}
+
+.thank-you-message a {
+  color:#567b95;
+  text-decoration: none;
+}
+
+.article > .text-content > h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(39, 39, 39);
+}
+
+.article footer .article-notes {
+  font-size: 0.75rem;
+  color: rgb(97, 97, 97);
+  font-family: Franklin;
+  line-height: 1rem;
+}
+.article footer .article-notes a {
+  display: inline-block;
+  color: rgb(97, 97, 97);
+}
+
+.article footer button {
+  background-color: #567b95;
+  border: none;
+  color: white;
+  padding: 0.6rem 6rem;
+  font-family: Franklin;
+  font-weight: bold;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.article footer nav {
+  display: flex;
+  margin-top: 0.3rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid-graphic {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.grid-graphic header {
+  font-family: Cheltenham;
+  margin-bottom: 0.3rem;
+}
+.grid-graphic header h2 {
+  font-weight: bold;
+  margin-bottom: 0.1rem;
+  color: black;
+}
+
+.grid-graphic figcaption span:first-child {
+  font-weight: bold;
+  font-size: 12px;
+  margin-right: 1rem;
+  letter-spacing: 0.7px;
+}
+
+.grid-graphic img {
+  height: 135px;
+  object-fit: contain;
+}
+.grid-graphic figcaption {
+  font-family: Franklin;
+  color: black;
+  font-size: 14px;
+  margin: 0px;
+}
+
+.grid-graphic header h3 {
+  line-height: 1.2rem;
+  color: rgb(77, 77, 77);
+  font-size: 0.95rem;
+}
+
+.grid-graphic .grid {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.grid-graphic footer hr {
+  width: 70px;
+  height: 0.75px;
+  background-color: black;
+  margin: 2.5rem 0px 1rem 0px;
+}
+
+.grid-graphic footer .author {
+  font-family: Franklin;
+  font-size: 0.88rem;
+  letter-spacing: 0.3px;
+}
+
+body > footer {
+  margin: 0px 10vw;
+  padding: 1rem 0px;
+  border-top: 3px solid rgb(226, 226, 226);
+}
+
+.site-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 1.2fr;
+  padding: 1rem 0rem;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.site-nav li {
+  font-family: Franklin;
+  margin-bottom: 0.45rem;
+  color:black;
+}
+
+.site-nav a {
+  display: inline-block;
+  text-decoration: none;
+  color:black;
+  font-size: 0.9rem;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+.site-nav > ul:not(:first-child) {
+  padding: 0rem 1rem;
+}
+
+.site-nav > ul > li:first-child {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0.7rem;
+}
+
+.site-nav ul:nth-child(4) {
+  border-right: 1px solid #e2e2e2;
+}
+
+.subscription-options a {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.subscription-options {
+  margin-bottom: 0.8rem;
+}
+
+body > footer .icon {
+  height: 13px;
+  width: 13px;
+}
+
+.other-options a {
+  font-size: 0.7rem;
+}
+
+.extra-nav {
+  padding: 1rem 0rem;
+}
+
+.extra-nav ul {
+  display:  flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.extra-nav a {
+  color: #666;
+  text-decoration: none;
+  font-family: Franklin;
+  font-size: 0.6rem;
+}
+
+.extra-nav li {
+  padding: 0rem 0.65rem;
+}
+
+.extra-nav a:hover {
+  text-decoration: underline;
+}
