@@ -1,0 +1,813 @@
+:root {
+  --sub-text-color: rgb(172, 172, 172);
+  --accent-orange-color: #f42;
+  --sub-accent-orange-color: rgba(255,68,34,.08);
+  --muted-accent-color: #fffaf8;
+}
+
+
+.btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.right {
+  display: flex;
+  margin-left: auto;
+}
+
+.left {
+  margin-right: auto;
+}
+
+
+html {
+  touch-action: manipulation;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "ARSMaquette", Arial, sans-serif;
+}
+
+/* Header styling */
+#other-nav {
+  display: flex;
+  background-color: #131313;
+  color: white;
+  padding-right: 0.6rem;
+}
+
+#other-nav li {
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--sub-text-color);
+}
+
+#other-nav a:hover {
+  color: white;
+}
+
+#topic-nav {
+  display: flex;
+  font-family: "Quantico";
+  font-size: 0.9rem;
+  background-color: white;
+}
+
+#topic-nav li {
+  padding: 1rem 0.5rem;
+  color: var(--sub-text-color);
+}
+
+#topic-nav a:hover {
+  color: black;
+}
+
+#site-nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+#site-nav ul {
+  display: flex;
+  list-style: none;
+}
+
+
+#site-nav ul a {
+  text-decoration: none;
+}
+
+#site-nav .square-btn {
+  cursor: pointer;
+  border-right: 0.5px solid rgb(214, 214, 214);
+  color: rgb(179, 179, 179);
+  height: 100%;
+  padding: calc((48px - 20px)/2);
+  transform: scale(-1, 1);
+}
+
+#site-nav .square-btn i {
+  width: 20px;
+  height: 20px;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#other-nav, #topic-nav {
+  padding-left: 0.6rem;
+}
+
+.event-banner {
+  padding: 0.5rem 1.0rem;
+  background: #fd3;
+  font-size: 0.9rem;
+}
+
+.event-banner a {
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.drop-down-arrow {
+  display: inline-block;
+  text-align: center;
+  margin-left: 0.3rem;
+}
+
+.drop-down-arrow:after {
+  content: "\25BC";
+  font-size: 0.5em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#mobile-nav {
+  background-color: white;
+  display: flex;
+}
+
+.nav-logo {
+  padding: 16px;
+  display: block;
+  background-color: black;
+}
+.nav-logo img {
+  height: 16px;
+}
+
+/* Content styling */
+#front-page {
+  padding-top: 108px;
+  display: grid;
+  grid-template: repeat(2, 1fr) / 2fr 1fr;
+  grid-auto-rows: 1fr;
+
+  height: 75vh;
+  max-height: 560px;
+  margin: 0.2rem 0.5rem;
+  gap: 0.5rem;
+}
+
+.main-article {
+  grid-row: 1 / span 2;
+}
+
+.logo {
+  position: absolute;
+  top: 2rem;
+  left: 1rem;
+  width: 50%;
+}
+
+#front-page .news-article {
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100%;
+  background-color: rgb(82, 82, 82);
+}
+
+.news-article > a {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: block;
+}
+
+.news-article a:before {
+  content: "";
+  display: block;
+  position: absolute; 
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent, black);
+}
+
+
+
+.news-article .date {
+  position: absolute;
+  top: 0.7rem;
+  right: 1rem;
+  color: white;
+}
+
+.news-article .news-description {
+  position: absolute;
+  bottom: 0px;
+  color: white;
+  margin: 0rem 1rem 0.5rem;
+}
+
+.news-article .category {
+  display: block;
+  font-size: 1em;
+  margin-bottom: 1em;
+  font-family: Quantico;
+}
+
+.news-article .headline {
+  font-size: 1.4em;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  line-height: 1.1;
+}
+
+.main-article .headline {
+  font-size: 3em;
+}
+
+
+.share-stats i, .post-time i {
+  margin-left: 0.5em;
+  font-size: 1.2em;
+  margin-right: 0.25rem;
+  position: relative;
+  top: 2px;
+}
+
+.other-info {
+  color: var(--sub-text-color);
+}
+
+.news-article .other-info {
+  font-size: 0.8rem;
+  margin: 1em 0em 0.5em;
+}
+
+
+.other-content {
+  margin: 0rem auto;
+  max-width: 1200px;
+  padding: 0rem 1rem;
+}
+
+.section-header {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.section-header:after {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="none" stroke="%23F42" stroke-width="3" stroke-miterlimit="10" d="M4.75 1.5l6.5 6.5-6.5 6.5"/></svg>');
+  content: "";
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  margin-left: 4px;
+  vertical-align: center;
+}
+
+#latest-news {
+  margin-top: 3rem; 
+  padding-bottom: 4rem;
+}
+
+
+#latest-news .section-header { 
+  margin-bottom: 1.8rem;
+}
+
+#latest-news .content {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 1.5rem;
+}
+
+#latest-news .content li {
+  display: flex;
+  flex-direction: column;
+}
+
+#latest-news h4 {
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+#latest-news h4:hover {
+  color: var(--accent-orange-color);
+  text-decoration: underline;
+}
+
+#latest-news .other-info {
+  margin: 0.5rem 0rem 0rem;
+  font-size: 0.8rem;
+}
+
+#latest-news img {
+  width: 100%;
+  margin-bottom: 0.7rem;
+
+}
+
+#funding-rounds .section-header {
+  margin-bottom: 0.7rem;
+}
+
+.other-content > section > header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#funding-rounds .content {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  
+  gap: 1.5rem;
+  margin-top: 0.8rem;
+  padding-bottom: 3rem;
+}
+
+.header-options a {
+  display: inline-block;
+  font-size: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.header-options a:not(:last-child):after {
+  content: "|";
+  margin-left: 0.7em;
+  margin-right: 0.35em;
+}
+
+.company-card {
+  position: relative;
+  background-color: var(--muted-accent-color);
+  height: 100%;
+}
+
+.company-card header a {
+  display: block;
+  width: 100%;
+}
+
+.company-logo {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.company-name {
+  padding: 1rem 0rem 1rem 80px;
+  background-color: var(--accent-orange-color);
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.funding-info {
+  display: block;
+  padding: 1rem 0rem 1rem 80px;
+  background-color: var(--sub-accent-orange-color);
+}
+
+.funding-amount {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.company-type {
+  font-size: 0.7rem;
+  color: var(--sub-text-color);
+  font-family: "Quantico";
+}
+
+.investment-info {
+  padding: 1rem 10px 1rem 10px;
+}
+
+.investment-info i {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.investment-info a {
+  display: block;
+  color: rgb(65, 65, 65);
+}
+
+.investment-info a:hover {
+  color: black;
+}
+
+.investment-info *:not(:last-child) {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.company-description {
+  border-top: 1px solid var(--accent-orange-color);
+  font-size: 0.8rem;
+  padding: 1rem 10px 1rem 10px;
+  line-height: 1.5;
+  color: rgb(65, 65, 65);
+}
+
+.company-description {
+  display: block;
+}
+
+.source-name {
+  color: rgb(119, 119, 119);
+}
+
+#categorized-articles .content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 4rem 1.5rem;
+  padding-bottom: 5rem;
+}
+
+#categorized-articles .news-article {
+  font-size: 0.8rem;
+}
+
+.other-articles .latest {
+  color: var(--accent-orange-color);
+  background-color: var(--sub-accent-orange-color);
+  margin-top: 0.2rem;
+  display: flex;
+  list-style: none;
+  position: relative;
+  justify-content: space-between;
+}
+
+.other-articles .latest img {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+.other-articles li:not(.latest) {
+  line-height: 1.2;
+  padding: 0.5em 0em;
+  font-size: 0.9rem;
+  color: rgb(73, 73, 73);
+  border-bottom: 0.5px solid rgb(226, 226, 226);
+  margin-left: 1em;
+  display: flex;
+}
+
+.other-articles .latest a:hover {
+  text-decoration: underline;
+}
+
+.other-articles li:not(.latest) a:hover {
+  color: black;
+}
+
+.other-articles li:not(.latest) a {
+  width: fit-content;
+  font-size: 0.95em;
+  padding-left: 1rem;
+}
+
+.other-articles li:not(.latest):before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: var(--accent-orange-color); /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+}
+
+.clear {
+  clear: both;
+}
+.other-articles .latest h4 {
+  font-family: "Quantico";
+  font-size: 0.8em;
+  margin-bottom: 0.5em;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+
+.other-articles .latest > div {
+  margin-right: 1rem;
+}
+
+.other-articles .latest a {
+  display: block;
+  font-weight: bold;
+  font-size: 0.85em;
+  padding-left: 1rem;
+  line-height: 1.2;
+  height: 3rem;
+  overflow: hidden;
+}
+
+
+#categorized-articles .news-article > a {
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 0px;
+  padding-top: 80%;
+  background-color: rgb(82, 82, 82);
+}
+
+#latest-deals .content {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  padding-bottom: 5rem;
+}
+
+#latest-deals img {
+  min-width: 0px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.product-image-container {
+  padding-top: 60%;
+  height: 0px;
+  position: relative;
+  margin-bottom: 0.8rem;
+}
+
+.product-name {
+  display: block;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+}
+
+.product-name:hover {
+  text-decoration: underline;
+  color: var(--accent-orange-color);
+}
+
+.old-price {
+  color: grey;
+  font-size: 0.8em;
+  text-decoration: line-through;
+}
+
+
+.deal-price {
+  margin-left: 0.2rem;
+}
+
+
+
+.social-media ul, .other-links ul {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.social-media ul {
+  padding: 2.5rem 0rem 2rem 0rem;
+}
+
+.other-links ul {
+  padding-bottom: 1.5rem;
+}
+
+.social-media a, .other-links a {
+  display: flex;
+  font-size: 1.1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0rem 0.5rem;
+}
+
+.social-media a {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+}
+
+.social-media a:hover {
+  background: transparent;
+  border: 1px solid #333;
+}
+
+.other-links a:hover {
+  color: white;
+}
+
+.other-links a {
+  font-family: "Quantico";
+  color: rgb(151, 151, 151);
+  font-size: 0.8rem;
+}
+
+
+body > footer {
+  background-color: #131313;
+}
+
+.copyright {
+  padding: 3rem 20vw;
+  background-color: black;
+  color: rgb(192, 192, 192);
+}
+
+.square-img-container {
+  height: 100%;
+  width: 100%;
+  height: 30px;
+}
+
+
+
+
+
+/* Media queries */
+@media (max-width: 1200px) {
+  #topic-nav > ul > li:nth-last-child(-n+2) {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  #front-page {
+    height: 60vh;
+  }
+
+  .news-article .headline {
+    font-size: 1.2rem;
+  }
+  
+  .news-article.main-article .headline {
+    font-size: 2.3rem;
+  }
+
+  .news-article .other-info {
+    font-size: 0.8rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  #latest-news .content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .news-article:not(.main-article) .share-stats {
+    display: none;
+  }
+
+  #funding-rounds .content li:last-child {
+    display: none;
+  }
+
+  #categorized-articles .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #latest-deals .content {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+  }
+
+
+
+}
+
+@media (min-width: 1000px) {
+  .main-article a:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://cdn0.tnwcdn.com/wp-content/themes/cyberdelia/assets/img/cover-gradient.png'), linear-gradient(transparent, black);
+  }
+}
+
+
+@media (max-width: 800px) {
+  #other-nav .right {
+    display: none;  
+  }
+}
+
+/* Computer view */
+@media (min-width: 700px) {
+  #mobile-nav {
+    display: none;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 700px) {
+  #other-nav, #topic-nav {
+    display: none;
+  }
+  
+  #front-page {
+    padding-top: 112px;
+  }
+
+  .event-banner {
+    padding: 1.5rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  #front-page {
+    grid-template-columns: 1fr;
+    max-height: none;
+    height: 100vh;
+  }
+
+  .main-article {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .news-article .category {
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+  }
+
+  .news-article .headline {
+    font-size: 1.3rem !important;
+  }
+
+  .news-article .date {
+    display: none;
+  }
+
+  #latest-news .content, #latest-deals .content {
+    grid-template-columns: 1fr;
+  }
+  
+  #latest-news img, #latest-deals img {
+    width: 75px;
+    height: 75px;
+    margin-right: 1rem;
+    margin-bottom: 0px;
+    position: relative;
+  }
+
+  #latest-deals .product-image-container {
+    padding: 0px;
+    margin: 0px;
+    height:auto;
+  }
+
+  #latest-news .content li, #latest-deals .content figure {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .header-options {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-options a:not(:last-child):after {
+    content: "";
+  }
+
+  #funding-rounds .content {
+    grid-auto-flow: row;
+  }
+
+  #categorized-articles .content {
+    grid-template-columns: 1fr;
+  }
+
+
+}
+
+.text-accent {
+  color: var(--accent-orange-color);
+}
+
+
+
