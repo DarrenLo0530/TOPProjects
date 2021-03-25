@@ -23,6 +23,7 @@
 
 
 html {
+  width: 100%;
   touch-action: manipulation;
 }
 
@@ -580,6 +581,7 @@ body {
   color: white;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .social-media ul {
@@ -595,7 +597,7 @@ body {
   font-size: 1.1rem;
   justify-content: center;
   align-items: center;
-  margin: 0rem 0.5rem;
+  margin: 0rem 0.5rem 1rem 0.5rem;
 }
 
 .social-media a {
