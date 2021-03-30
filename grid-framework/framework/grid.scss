@@ -1,0 +1,57 @@
+$breakpoints: (
+  "xs": 0px,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px
+);
+
+.container {
+  width: 100%;
+  margin: 0px auto;
+
+  .row {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+
+    @for $i from 0 through 12 {
+      .col-#{$i} {
+        min-width: 0px;
+        overflow: hidden;
+        flex: 0 0 percentage($i/12);
+      }
+
+    }
+  }
+
+  @each $breakpoint, $size in $breakpoints {
+    @media (min-width: $size) {
+      @for $i from 0 through 12 {
+        min-width: 0px;
+        overflow: hidden;
+        .col-#{$breakpoint}-#{$i} {
+          flex: 0 0 percentage($i/12) !important;
+        }
+      }
+
+    }
+  }
+}
+
+
+@each $alignment in "start", "end", "center", "stretch" {
+  .align-items-#{$alignment} {
+    align-items: unquote($alignment);
+  }
+}
+
+@each $alignment in "start", "end", "center", "stretch", "space-around", "space-between", "space-evenly" {
+  .justify-content-#{$alignment} {
+    justify-content: unquote($alignment);
+  }
+}
+
+.flex {
+  display: flex;
+}

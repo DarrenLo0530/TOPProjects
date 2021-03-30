@@ -1,0 +1,38 @@
+$space: 0.5;
+
+@each $prefix, $spacer in ("m": "margin", "p": "padding") {
+  @for $i from 1 through 9 {
+    .#{$prefix}y-#{$i} {
+      #{$spacer}-top: #{$space * $i}rem;
+      #{$spacer}-bottom: #{$space * $i}rem;
+    }
+
+    .#{$prefix}x-#{$i} {
+      #{$spacer}-left: #{$space * $i}rem;
+      #{$spacer}-right: #{$space * $i}rem;
+    }
+
+    .#{$prefix}-#{$i} {
+      #{$spacer}: #{$space * $i}rem;
+    }
+
+    .#{$prefix}t-#{$i} {
+      #{$spacer}-top: #{$space * $i}rem;
+    }
+
+    .#{$prefix}b-#{$i} {
+      #{$spacer}-bottom: #{$space * $i}rem;
+    }
+
+    .#{$prefix}l-#{$i} {
+      #{$spacer}-left: #{$space * $i}rem;
+    }
+
+    .#{$prefix}r-#{$i} {
+      #{$spacer}-right: #{$space * $i}rem;
+    }
+
+
+    
+  } 
+} 
