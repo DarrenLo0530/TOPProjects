@@ -1,0 +1,43 @@
+.site-header {
+  width: 100%;
+  background-color: rgb(53, 53, 61);
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  font-weight: 300;
+}
+
+body {
+  background-color: rgb(230, 231, 233);
+}
+
+#resume-container {
+  position: relative;
+  width: 80%;
+  height: 0px;
+  padding-bottom: 112.8%;
+  margin: 3rem auto;
+}
+
+#resume {
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+
+  background-color: white;
+  box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  font-size: 1vw;
+}
+
+.left-bar {
+  width: 30%;
+  color: white;
+}
+
+

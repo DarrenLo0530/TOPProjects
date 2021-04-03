@@ -1,0 +1,23 @@
+.editable-field * {
+  font-size: inherit;
+  box-sizing: content-box;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  color: inherit;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  outline: 0px;
+  height: 1em;
+  padding: 0.2em 0.1em;
+}
+
+textarea, input { 
+  outline: 1px solid white !important;
+  font-family: inherit;
+}
+
+.editable-field div:focus {
+  outline: none;
+}
