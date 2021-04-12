@@ -10,15 +10,18 @@ function App() {
         <a href="/"><h1>CV Builder</h1></a>
       </header>
       <div id="resume-width">
-        <div id="resume-container">
-          <section id="resume">
-            <div className="left">
-              <PersonalInfo />
-            </div>
-            <div className="right">
-              <OtherInfo />
-            </div>
-          </section>
+        <div id="resume-dimensions">
+          <div id="resume-container">
+            <section id="resume">
+              <div className="left">
+                <PersonalInfo />
+              </div>
+              <div className="right">
+                <OtherInfo />
+              </div>
+            </section>
+            <div className="bottom-padding" />
+          </div>
         </div>
       </div>
     </div>

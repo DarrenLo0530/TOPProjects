@@ -10,6 +10,7 @@
 
 body {
   background-color: rgb(230, 231, 233);
+  height: 100%;
 }
 
 h1, a  {
@@ -23,25 +24,34 @@ h1, a  {
   width: 80%;
 }
 
-#resume-container {
+/* Resume begins off with a 1 */
+#resume-dimensions {
   position: relative;
   width: 100%;
   padding-bottom: 141%;
 }
 
-#resume {
-  border-radius: 1%;
-  overflow: hidden;
+/* Resume  */
+#resume-container {
   position: absolute;
   top: 0px;
   left: 0px;
-  min-height: 100%;
+  height: 100%;
   width: 100%;
+}
 
+#resume {
+  border-radius: 1%;
+  overflow: hidden;
+  min-height: 100%;
   background-color: white;
   box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.2);
   display: flex;
   font-size: 1vw;
+}
+
+.bottom-padding {
+  height: 100px;
 }
 
 .left {
