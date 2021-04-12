@@ -44,6 +44,10 @@
 }
 
 .exp-entry .delete-btn {
+  font-size: 0.8em;
+}
+
+.exp-entry .delete-btn {
   padding-left: 1em;
   padding-right: 1em;
 }
