@@ -1,13 +1,33 @@
-import React, { Component } from 'react';
+import React, { useState, Component } from 'react';
 import PropType from 'prop-types';
 import uniqid from 'uniqid';
 import EditableField from './EditableField';
 import { handleChange } from './Utils';
 import './PersonalInfo.css';
 
-const InfoList = ({ list, className }) => (
+const InfoListItem = ({ item, deleteItem }) => {
+  const [isHovered, setHovered] = useState(false);
+  return (
+    <li
+      onMouseEnter={() => { setHovered(true); }}
+      onMouseLeave={() => { setHovered(false); }}
+    >
+      { item }
+      { isHovered ? (<button type="button" onClick={() => { deleteItem(item); }}>X</button>) : null }
+    </li>
+  );
+};
+
+InfoListItem.propTypes = {
+  item: PropType.string.isRequired,
+  deleteItem: PropType.func.isRequired,
+};
+
+const InfoList = ({ list, className, deleteItem }) => (
   <ul className={`${className} info-list`}>
-    {list.map((element) => (<li key={uniqid()}>{ element }</li>))}
+    {list.map((item) => (
+      <InfoListItem key={uniqid()} item={item} deleteItem={deleteItem} />
+    ))}
   </ul>
 );
 
@@ -18,6 +38,7 @@ InfoList.defaultProps = {
 InfoList.propTypes = {
   list: PropType.arrayOf(PropType.string).isRequired,
   className: PropType.string,
+  deleteItem: PropType.func.isRequired,
 };
 
 class PersonalInfo extends Component {
@@ -29,7 +50,7 @@ class PersonalInfo extends Component {
       profession: '',
       showContactForm: false,
       contact: '',
-      contactList: [],
+      contactsList: [],
       showSkillForm: false,
       skill: '',
       skillsList: [],
@@ -41,6 +62,7 @@ class PersonalInfo extends Component {
     this.handleChange = handleChange.bind(this);
     this.formToggle = this.formToggle.bind(this);
     this.formSubmit = this.formSubmit.bind(this);
+    this.removeFromList = this.removeFromList.bind(this);
   }
 
   formToggle(toggleKey) {
@@ -56,10 +78,17 @@ class PersonalInfo extends Component {
     });
   }
 
+  removeFromList(listKey, removedItem) {
+    const { [listKey]: list } = this.state;
+    this.setState({
+      [listKey]: list.filter((item) => item !== removedItem),
+    });
+  }
+
   render() {
     const {
       fullName, profession,
-      showContactForm, contact, contactList,
+      showContactForm, contact, contactsList,
       showSkillForm, skill, skillsList,
       showHobbyForm, hobby, hobbiesList,
     } = this.state;
@@ -76,10 +105,10 @@ class PersonalInfo extends Component {
             {showContactForm ? 'Close' : 'Add' }
           </button>
         </h2>
-        <InfoList list={contactList} className="contacts-list" />
+        <InfoList list={contactsList} className="contacts-list" deleteItem={(item) => { this.removeFromList('contactsList', item); }} />
         {
           showContactForm ? (
-            <form className="personal-form" onSubmit={(event) => { this.formSubmit(event, 'contact', 'contactList'); }}>
+            <form className="personal-form" onSubmit={(event) => { this.formSubmit(event, 'contact', 'contactsList'); }}>
               <input type="text" value={contact} placeholder="Add a contact" name="contact" onChange={this.handleChange} required />
               <input type="submit" value="Add" />
             </form>
@@ -91,7 +120,7 @@ class PersonalInfo extends Component {
             {showSkillForm ? 'Close' : 'Add' }
           </button>
         </h2>
-        <InfoList list={skillsList} className="skills-list" />
+        <InfoList list={skillsList} className="skills-list" deleteItem={(item) => { this.removeFromList('skillsList', item); }} />
         {
           showSkillForm ? (
             <form className="personal-form" onSubmit={(event) => { this.formSubmit(event, 'skill', 'skillsList'); }}>
@@ -106,7 +135,7 @@ class PersonalInfo extends Component {
             {showHobbyForm ? 'Close' : 'Add' }
           </button>
         </h2>
-        <InfoList list={hobbiesList} className="hobbies-list" />
+        <InfoList list={hobbiesList} className="hobbies-list" deleteItem={(item) => { this.removeFromList('hobbiesList', item); }} />
         {
           showHobbyForm ? (
             <form className="personal-form" onSubmit={(event) => { this.formSubmit(event, 'hobby', 'hobbiesList'); }}>
