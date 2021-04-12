@@ -7,17 +7,19 @@ function App() {
   return (
     <div className="content">
       <header className="site-header">
-        <h1>CV Builder</h1>
+        <a href="/"><h1>CV Builder</h1></a>
       </header>
-      <div id="resume-container">
-        <section id="resume">
-          <div className="left-bar">
-            <PersonalInfo />
-          </div>
-          <div>
-            <OtherInfo />
-          </div>
-        </section>
+      <div id="resume-width">
+        <div id="resume-container">
+          <section id="resume">
+            <div className="left">
+              <PersonalInfo />
+            </div>
+            <div className="right">
+              <OtherInfo />
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   );

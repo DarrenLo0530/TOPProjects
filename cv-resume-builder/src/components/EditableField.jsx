@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import TextareaAutosize from 'react-textarea-autosize';
 import './EditableField.css';
 
 function EditableField({
@@ -22,23 +23,23 @@ function EditableField({
 
   function renderText() {
     return (
-      <span
+      <div
         id={id}
-        className={className}
+        className={`${className} ${type === 'textarea' ? 'textarea-value' : 'input-value'}`}
         role="textbox"
         tabIndex={0}
         onClick={() => setEditing(true)}
         onKeyPress={() => setEditing(true)}
       >
         {value || placeHolder}
-      </span>
+      </div>
     );
   }
 
   function renderEditor() {
     const editorId = id ? `${id}-editor` : '';
     return type === 'textarea' ? (
-      <textarea
+      <TextareaAutosize
         name={name}
         id={editorId}
         className={className}
@@ -85,12 +86,4 @@ EditableField.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-function fieldOnChange(event) {
-  const { name, value } = event.target;
-  this.setState({
-    [name]: value,
-  });
-}
-
-export { fieldOnChange };
 export default EditableField;

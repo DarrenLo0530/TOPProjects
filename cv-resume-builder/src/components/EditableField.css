@@ -1,6 +1,5 @@
 .editable-field * {
   font-size: inherit;
-  box-sizing: content-box;
   display: block;
   width: 100%;
   background-color: transparent;
@@ -9,15 +8,28 @@
   margin: 0px;
   border: 0px;
   outline: 0px;
-  height: 1em;
   padding: 0.2em 0.1em;
 }
 
-textarea, input { 
-  outline: 1px solid white !important;
-  font-family: inherit;
+.editable-field .input-value, .editable-field input {
+  height: 1.4em;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.editable-field div:focus {
-  outline: none;
+.editable-field .textarea-value, .editable-field  textarea {
+  line-height: 1.4;
+  resize: none;
 }
+
+
+.editable-field textarea, .editable-field  input { 
+  outline: 1px solid white !important;
+  font-family: inherit;
+  line-height: 1.2;
+}
+
+.editable-field div {
+  word-wrap: break-word;
+}
+

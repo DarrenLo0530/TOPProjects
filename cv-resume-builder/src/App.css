@@ -12,16 +12,26 @@ body {
   background-color: rgb(230, 231, 233);
 }
 
+h1, a {
+  color: white;
+  text-decoration: none;
+}
+
+#resume-width {
+  margin: auto;
+  margin: 3rem auto;
+  width: 80%;
+}
+
 #resume-container {
   position: relative;
-  width: 80%;
+  width: 100%;
   height: 0px;
-  padding-bottom: 112.8%;
-  margin: 3rem auto;
+  padding-bottom: 141%;
 }
 
 #resume {
-  border-radius: 10px;
+  border-radius: 1%;
   overflow: hidden;
   position: absolute;
   top: 0px;
@@ -35,9 +45,21 @@ body {
   font-size: 1vw;
 }
 
-.left-bar {
+.left {
   width: 30%;
   color: white;
 }
 
+.right {
+  width: 70%;
+}
 
+@media (min-width: 1000px) {
+  #resume-width {
+    width: 50%;
+  }
+
+  #resume {
+    font-size: 0.625vw;
+  }
+}

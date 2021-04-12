@@ -1,0 +1,20 @@
+.other-info-container {
+  padding: 2em;
+}
+
+.writeup {
+  font-size: 2em;
+}
+
+textarea.writeup {
+  outline: 1px solid black !important;
+  resize:none;
+}
+
+hr {
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 1px;
+  margin: 2em 0em;
+}
