@@ -42,7 +42,8 @@
 .personal-form {
   font-size: 1.5em;
   padding: 0.5vw;
-  padding-left: 1.5em;  
+  padding-left: 1em;
+  padding-right: 1em;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -51,6 +52,7 @@
 .personal-form input[type="text"] {
   font-size: 1em;
   padding: 0.1em;
+  padding-left: 0.3em;
 }
 
 .personal-form input[type="submit"] {
@@ -59,11 +61,13 @@
 }
 
 .personal-form input {
+  width: 100%;
   margin-bottom: 0.5em;
 }
 
 .info-list {
   padding-left: 1.5em;
+  padding-right: 1.5em;
   font-size: 1em;
   padding-bottom: 2em;
 }
@@ -72,7 +76,6 @@
   font-size: 1.5em;
   height: 2em;
   display: flex;
-  padding-right: 0.3em;
   align-items: center;
 }
 
