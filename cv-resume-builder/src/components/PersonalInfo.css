@@ -42,15 +42,24 @@
 .personal-form {
   font-size: 1.5em;
   padding: 0.5vw;
+  padding-left: 1.5em;  
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.personal-form input {
+.personal-form input[type="text"] {
   font-size: 1em;
-  margin-bottom: 1em;
   padding: 0.1em;
+}
+
+.personal-form input[type="submit"] {
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
+.personal-form input {
+  margin-bottom: 0.5em;
 }
 
 .info-list {
@@ -61,11 +70,18 @@
 
 .info-list li {
   font-size: 1.5em;
-  margin-bottom: 0.8em;
+  height: 2em;
+  display: flex;
+  padding-right: 0.3em;
+  align-items: center;
 }
 
+.hobbies-list li:before, .skills-list li:before {
+  content: "•"; 
+  color: white;
+  margin-right: 0.5em;
+}
 
-.skills-list, .hobbies-list {
-  padding-left: 3em;
-  list-style: disc;
+.info-list .delete-btn {
+  margin-left: auto;
 }

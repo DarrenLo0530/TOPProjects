@@ -12,7 +12,7 @@ body {
   background-color: rgb(230, 231, 233);
 }
 
-h1, a {
+h1, a  {
   color: white;
   text-decoration: none;
 }
@@ -26,7 +26,6 @@ h1, a {
 #resume-container {
   position: relative;
   width: 100%;
-  height: 0px;
   padding-bottom: 141%;
 }
 
@@ -36,7 +35,7 @@ h1, a {
   position: absolute;
   top: 0px;
   left: 0px;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
 
   background-color: white;
@@ -52,6 +51,41 @@ h1, a {
 
 .right {
   width: 70%;
+}
+
+.btn {
+  font-family: inherit;
+  outline: none;
+  border: none;
+  padding: 0.2em 0.5em;
+  border-radius: 1px;
+  font-size: 1em;
+}
+
+.btn-primary {
+  background-color: rgb(238, 238, 238);  
+}
+
+.btn-primary:hover {
+  background-color: white;
+}
+
+.btn-secondary {
+  background: rgb(44, 44, 63);  
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: rgb(62, 62, 82);
+}
+
+.delete-btn {
+  background-color: rgb(238, 68, 68);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.delete-btn:hover {
+  background-color: rgb(248, 60, 60);
 }
 
 @media (min-width: 1000px) {

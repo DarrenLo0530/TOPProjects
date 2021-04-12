@@ -22,7 +22,6 @@
   resize: none;
 }
 
-
 .editable-field textarea, .editable-field  input { 
   outline: 1px solid white !important;
   font-family: inherit;

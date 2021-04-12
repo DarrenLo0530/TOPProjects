@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import EditableField from './EditableField';
 import { handleChange } from './Utils';
 import './OtherInfo.css';
+import Experience from './Experience';
 
 class OtherInfo extends Component {
   constructor(props) {
@@ -9,8 +10,6 @@ class OtherInfo extends Component {
 
     this.state = {
       writeup: '',
-      // education: [],
-      // work: [],
     };
 
     this.handleChange = handleChange.bind(this);
@@ -29,6 +28,8 @@ class OtherInfo extends Component {
           onChange={this.handleChange}
         />
         <hr />
+        <Experience experienceType="work" purposeType="position" />
+        <Experience experienceType="education" purposeType="degree" />
       </div>
     );
   }

@@ -1,0 +1,69 @@
+.experience-container {
+  margin-bottom: 5em;
+}
+
+.experience-container form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+}
+
+.experience-container input {
+  font-size: 1em;
+}
+
+.experience-container input[type="submit"] {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.experience-container label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.4em;
+}
+
+.experience-container label span {
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+.experience-container textarea {
+  resize: vertical;
+}
+
+.form-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.exp-entry {
+  font-size: 1.5em;
+  margin-bottom: 1.3em;
+}
+
+.exp-entry .delete-btn {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.exp-time {
+  height: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+.exp-school {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.exp-desc {
+  color: rgb(80, 80, 80);
+  margin-top: 0.3em;
+}

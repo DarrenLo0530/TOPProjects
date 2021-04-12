@@ -2,9 +2,10 @@ import React, { useState, Component } from 'react';
 import PropType from 'prop-types';
 import uniqid from 'uniqid';
 import EditableField from './EditableField';
-import { handleChange } from './Utils';
+import { handleChange, toggleState, removeFromList } from './Utils';
 import './PersonalInfo.css';
 
+// A display for a string item in a list
 const InfoListItem = ({ item, deleteItem }) => {
   const [isHovered, setHovered] = useState(false);
   return (
@@ -13,7 +14,7 @@ const InfoListItem = ({ item, deleteItem }) => {
       onMouseLeave={() => { setHovered(false); }}
     >
       { item }
-      { isHovered ? (<button type="button" onClick={() => { deleteItem(item); }}>X</button>) : null }
+      { isHovered ? (<button className="btn delete-btn" type="button" onClick={deleteItem}>X</button>) : null }
     </li>
   );
 };
@@ -23,10 +24,11 @@ InfoListItem.propTypes = {
   deleteItem: PropType.func.isRequired,
 };
 
+// A list of items
 const InfoList = ({ list, className, deleteItem }) => (
   <ul className={`${className} info-list`}>
     {list.map((item) => (
-      <InfoListItem key={uniqid()} item={item} deleteItem={deleteItem} />
+      <InfoListItem key={uniqid()} item={item} deleteItem={() => { deleteItem(item); }} />
     ))}
   </ul>
 );
@@ -60,13 +62,9 @@ class PersonalInfo extends Component {
     };
 
     this.handleChange = handleChange.bind(this);
-    this.formToggle = this.formToggle.bind(this);
+    this.toggleState = toggleState.bind(this);
+    this.removeFromList = removeFromList.bind(this);
     this.formSubmit = this.formSubmit.bind(this);
-    this.removeFromList = this.removeFromList.bind(this);
-  }
-
-  formToggle(toggleKey) {
-    this.setState((prevState) => ({ [toggleKey]: !prevState[toggleKey] }));
   }
 
   formSubmit(event, valueKey, listKey) {
@@ -75,13 +73,6 @@ class PersonalInfo extends Component {
     this.setState({
       [listKey]: list.concat(value),
       [valueKey]: '',
-    });
-  }
-
-  removeFromList(listKey, removedItem) {
-    const { [listKey]: list } = this.state;
-    this.setState({
-      [listKey]: list.filter((item) => item !== removedItem),
     });
   }
 
@@ -101,7 +92,7 @@ class PersonalInfo extends Component {
 
         <h2>
           <span>Contacts</span>
-          <button type="button" onClick={() => { this.formToggle('showContactForm'); }}>
+          <button className="btn btn-primary" type="button" onClick={() => { this.toggleState('showContactForm'); }}>
             {showContactForm ? 'Close' : 'Add' }
           </button>
         </h2>
@@ -110,13 +101,13 @@ class PersonalInfo extends Component {
           showContactForm ? (
             <form className="personal-form" onSubmit={(event) => { this.formSubmit(event, 'contact', 'contactsList'); }}>
               <input type="text" value={contact} placeholder="Add a contact" name="contact" onChange={this.handleChange} required />
-              <input type="submit" value="Add" />
+              <input className="btn btn-primary" type="submit" value="Add" />
             </form>
           ) : null
         }
         <h2>
           <span>Skills</span>
-          <button type="button" onClick={() => { this.formToggle('showSkillForm'); }}>
+          <button className="btn btn-primary" type="button" onClick={() => { this.toggleState('showSkillForm'); }}>
             {showSkillForm ? 'Close' : 'Add' }
           </button>
         </h2>
@@ -125,13 +116,13 @@ class PersonalInfo extends Component {
           showSkillForm ? (
             <form className="personal-form" onSubmit={(event) => { this.formSubmit(event, 'skill', 'skillsList'); }}>
               <input type="text" value={skill} placeholder="Add a skill" name="skill" onChange={this.handleChange} required />
-              <input type="submit" value="Add" />
+              <input className="btn btn-primary" type="submit" value="Add" />
             </form>
           ) : null
         }
         <h2>
           <span>Hobbies</span>
-          <button type="button" onClick={() => { this.formToggle('showHobbyForm'); }}>
+          <button className="btn btn-primary" type="button" onClick={() => { this.toggleState('showHobbyForm'); }}>
             {showHobbyForm ? 'Close' : 'Add' }
           </button>
         </h2>
@@ -140,7 +131,7 @@ class PersonalInfo extends Component {
           showHobbyForm ? (
             <form className="personal-form" onSubmit={(event) => { this.formSubmit(event, 'hobby', 'hobbiesList'); }}>
               <input type="text" value={hobby} placeholder="Add a hobby" name="hobby" onChange={this.handleChange} required />
-              <input type="submit" value="Add" />
+              <input className="btn btn-primary" type="submit" value="Add" />
             </form>
           ) : null
         }
