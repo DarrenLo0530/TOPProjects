@@ -3,7 +3,7 @@ import PropType from 'prop-types';
 import uniqid from 'uniqid';
 import EditableField from './EditableField';
 import { handleChange, toggleState, removeFromList } from './Utils';
-import './PersonalInfo.css';
+import '../styles/PersonalInfo.css';
 
 // A display for a string item in a list
 const InfoListItem = ({ item, deleteItem }) => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import TextareaAutosize from 'react-textarea-autosize';
-import './EditableField.css';
+import '../styles/EditableField.css';
 
 function EditableField({
   type,

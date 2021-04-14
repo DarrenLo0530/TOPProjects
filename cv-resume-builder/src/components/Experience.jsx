@@ -3,7 +3,7 @@ import PropType from 'prop-types';
 import uniqid from 'uniqid';
 import capitalize from 'capitalize';
 import { handleChange, toggleState, removeFromList } from './Utils';
-import './Experience.css';
+import '../styles/Experience.css';
 
 // Builds an experience entry
 const experienceBuilder = (institution, city, startTime, endTime, purpose, description) => ({
@@ -49,8 +49,8 @@ ExperienceItem.propTypes = {
   experience: PropType.shape({
     institution: PropType.string.isRequired,
     city: PropType.string.isRequired,
-    startTime: PropType.number.isRequired,
-    endTime: PropType.number.isRequired,
+    startTime: PropType.string.isRequired,
+    endTime: PropType.string.isRequired,
     purpose: PropType.string.isRequired,
     description: PropType.string.isRequired,
   }).isRequired,

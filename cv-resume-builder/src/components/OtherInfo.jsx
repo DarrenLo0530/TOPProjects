@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import EditableField from './EditableField';
 import { handleChange } from './Utils';
-import './OtherInfo.css';
+import '../styles/OtherInfo.css';
 import Experience from './Experience';
 
 class OtherInfo extends Component {
