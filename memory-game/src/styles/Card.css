@@ -1,0 +1,23 @@
+.card {
+  animation: all 0.5s ease-in;
+  width: fit-content;
+  margin: 2rem;
+  font-size: 0.6rem;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card-button {
+  color: rgb(48, 48, 48);
+  background-color: rgb(162, 201, 118);
+  outline: none;
+  border: 2px solid rgb(158, 160, 168);
+  border-radius: 3px;
+  padding: 0.5rem;
+}
+
+.card-button figcaption {
+  text-transform: capitalize;
+}

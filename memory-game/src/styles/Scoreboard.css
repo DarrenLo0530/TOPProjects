@@ -1,0 +1,31 @@
+.scoreboard {
+  background-color: rgb(54, 54, 54);
+  display: flex;
+  justify-content: center;
+  padding: 1rem 2rem;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 0.8rem;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+
+.scores {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.current-score, .high-score {
+  margin-bottom: 0.5rem;
+}
+
+.current-score span:first-child, .high-score span:first-child {
+  text-transform: uppercase;
+  margin-right: 0.3rem;
+}
