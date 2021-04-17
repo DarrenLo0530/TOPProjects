@@ -1,0 +1,14 @@
+extends layout 
+
+block content
+  .container.mx-auto.pt-12
+    h1.text-3xl Write a Message
+
+    form.flex.flex-col.items-start.py-5(method="POST" action="/new")
+      label.mb-1(for="authorName") Your Name
+      input.border.border-gray-600(type="text" name="authorName" id="authorName" required)
+
+      label.mb-1.mt-3(for="messageBody") Message
+      input.border.border-gray-600(type="text" name="messageBody" id="messageBody" required)
+
+      input.bg-blue-600.py-2.px-3.rounded.text-white.mt-3(type="submit" href="new" value="New Message")

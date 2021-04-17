@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .container.mx-auto.pt-12
+    h1.text-3xl Welcoma to the Message Board
+
+    section.pt-5.pb-3
+      each message in messages
+        .flex.flex-col.my-3
+          span.font-bold= message.user 
+          span= message.text
+          span= message.added
+    a.bg-indigo-600.py-2.px-3.rounded.text-white(href="new") Write Message
