@@ -7,8 +7,6 @@ exports["default"] = void 0;
 
 var _mongoose = _interopRequireDefault(require("mongoose"));
 
-var _this = void 0;
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Schema = _mongoose["default"].Schema;
@@ -22,8 +20,8 @@ var CategorySchema = new Schema({
     required: true
   }
 });
-CategorySchema.virtual('url').get(function () {
-  return "/category/".concat(_this._id);
+CategorySchema.virtual('url').get(function getId() {
+  return "/category/".concat(this._id);
 });
 
 var _default = _mongoose["default"].model('Category', CategorySchema);

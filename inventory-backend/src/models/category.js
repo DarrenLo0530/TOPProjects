@@ -9,6 +9,6 @@ const CategorySchema = new Schema({
 
 CategorySchema
   .virtual('url')
-  .get(() => `/category/${this._id}`);
+  .get(function getId() { return `/category/${this._id}`; });
 
 export default mongoose.model('Category', CategorySchema);

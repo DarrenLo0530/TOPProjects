@@ -1,0 +1,20 @@
+extends layout 
+
+block content
+  .container.mt-3
+    h1= item.name
+    
+    .py-2.d-flex.flex-wrap
+      each category in item.categories  
+        span.me-2.badge.rounded-pill.bg-primary= category.name
+    p= item.description 
+    
+    div.mb-3
+      span.me-3 Quantity: #{item.stockQuantity}
+      span.me-3 Price: $#{item.price.toFixed(2)}
+    
+    .d-flex
+      a.btn.btn-warning.me-3(href=`/item/${item._id}/edit`) Edit
+      form(method="POST" action=`${item.url}?_method=DELETE`)
+        button.btn.btn-danger(type="submit") Delete
+  

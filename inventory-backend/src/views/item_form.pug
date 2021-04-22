@@ -1,0 +1,60 @@
+extends layout 
+block content 
+  .container.mt-3
+    h1.mb-3= create ? 'Create Item' : 'Update Item' 
+    form(method="POST" action=`?_method=${action}`)
+      .mb-3
+        label.form-label(for="item-name") Name
+        input.form-control(
+          id="item-name" 
+          name="name"
+          value=item ? item.name : ''
+        )
+      .mb-3
+        label.form-label(for="item-desc") Description
+        textarea.form-control(
+          type="text" 
+          id="item-desc" 
+          name="description"
+        )= item ? item.description : ''
+      .mb-3
+        label.form-label(for="item-price") Price($)
+        input.form-control(
+          type="number" 
+          step="0.01" 
+          id="item-price" 
+          name="price"
+          min="0"
+          value= item ? item.price : ''
+        )
+      .mb-5
+        label.form-label(for="item-stock-quantity") Number in Stock
+        input.form-control(
+          type="number"
+          step="1"
+          name="stockQuantity"
+          id="item-stock-quantity"
+          min="0"
+          value= item ? item.stockQuantity : ''
+        )
+      h2.mb-3 Categories       
+      each category in categories 
+        .form-check.mb-3
+          input.form-check-input(
+            type="checkbox" 
+            name="categories" 
+            id=category._id 
+            value=category._id 
+            checked=category.checked
+          )
+          label.form-check-label(for=category._id)= category.name
+      
+      if errors 
+        ul.mb-3
+          each error in errors
+            li.text-danger= error.msg
+      .py-3
+        button.btn.btn-primary(type="submit")= create ? 'Create' : 'Update'
+
+        
+      

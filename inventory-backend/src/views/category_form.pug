@@ -1,0 +1,33 @@
+extend layout 
+
+block content
+  .container.mt-3
+    .row.justify-content-center
+      .col-12.col-md-9.col-lg-6
+        h1= `${create ? 'Create' : 'Update' } Category`
+        form.py-3(method="POST" action=`?_method=${action}`)
+          .mb-3
+            label.form-label(for="category-name") Category Name
+            input#category-name.form-control(
+              type="text" 
+              name="name"
+              value=category ? category.name : ''
+              required
+            )
+          .mb-3 
+            label.form-label(for="category-desc") Category Description
+            textarea#category-desc.form-control(
+              name="description" 
+              placeholder="Keep it short"
+              required
+            )= category ? category.description : ''
+          .mb-3
+            button.btn.btn-primary(type="submit")
+              if create
+                | Create
+              else 
+                | Update
+          if errors 
+            ul.mb-3
+              each error in errors
+                li.text-danger= error.msg

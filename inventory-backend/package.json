@@ -4,23 +4,25 @@
   "private": true,
   "scripts": {
     "build": "babel ./src --out-dir dist --copy-files",
-    "start": "npm run dev-start",
+    "start": "npx kill-port 3000 && npm run dev-start",
     "dev-start": "NODE_ENV=development babel-node ./src/bin/www",
     "dev-server": "nodemon --exec npm run start",
     "prod-start": "NODE_ENV=production babel-node ./src/bin/www",
     "build-css": "postcss src/public/stylesheets/tailwind.css -o src/public/stylesheets/tailwind.css"
   },
   "dependencies": {
-    "autoprefixer": "^10.2.5",
+    "async": "^3.2.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
     "express": "~4.16.1",
+    "express-validator": "^6.10.0",
     "http-errors": "~1.6.3",
+    "jquery": "^3.6.0",
+    "method-override": "^3.0.0",
     "mongoose": "^5.12.5",
     "morgan": "~1.9.1",
-    "pug": "^3.0.2",
-    "tailwindcss": "^2.1.1"
+    "pug": "^3.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.14",

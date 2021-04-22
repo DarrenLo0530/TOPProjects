@@ -14,6 +14,8 @@
         "no-use-before-define": 0,
         "no-restricted-globals": 0,
         "object-curly-spacing": ["error", "always"],
-        "no-underscore-dangle": 0
+        "no-underscore-dangle": 0,
+        "no-unused-vars": ["error", { "args": "none" }],
+        "indent": ["error", 2, { "MemberExpression": 1 }]
     }
 }
